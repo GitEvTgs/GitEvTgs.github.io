@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Q8 NickName spoof</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        #output {
+            margin-top: 15px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<button onclick="generate()">Сгенерировать</button>
+<div id="output"></div>
+
+<script>
+    const chars = ['ē','Ē','Ī','ī','Ū','ū','Ō','ō','ā','Ā'];
+    const constant = 'Q8';
+
+    function randomChar() {
+        return chars[Math.floor(Math.random() * chars.length)];
+    }
+
+    function generate() {
+        let result =
+            randomChar() +
+            randomChar() +
+            randomChar() +
+            constant +
+            randomChar() +
+            randomChar() +
+            randomChar();
+
+        document.getElementById('output').textContent = result;
+    }
+</script>
+
+</body>
+</html>
